@@ -13,6 +13,11 @@ function convertValues() {
     const libraToday = 6.00
     const bitcoinToday = 132000.00
 
+    currencyValue.innerHTML = new Intl.NumberFormat("pt-br", {
+        style: "currency",
+        currency: "BRL",
+    }).format(valueToConvert)
+    
 
     if(currencySelect.value == "real") {
         currencyConverted.innerHTML = new Intl.NumberFormat("pt-br", {
@@ -168,5 +173,3 @@ function changeCurrency() {
 // currencyToConvert.addEventListener("change", changeValuesToConvert)
 currencySelect.addEventListener("change", changeCurrency)
 convertButton.addEventListener("click", convertValues)
-
-
